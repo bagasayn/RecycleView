@@ -22,6 +22,7 @@ class NumbersAdaptor(numberOfItems: Int, private var viewHolderCount: Int = 0) :
 
     } // оборачиваем элемент списка и передаем новые значения при прокрутке списка
 
+
     @SuppressLint("SetTextI18n")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
         val context: Context = parent.context
@@ -29,8 +30,7 @@ class NumbersAdaptor(numberOfItems: Int, private var viewHolderCount: Int = 0) :
         val inflater: LayoutInflater = LayoutInflater.from(context) // создаем объект класса View из XML файла
         val view: View = inflater.inflate(layoutIdForListItem,parent,false) // Создаем новый элемент из списка XML. 1-Указываем из какого XML мы хотим создать новый объект. 2-Задаем родителя. 3-Разрешение на помещение нового элемента внутрь родителя
         val viewHolder = NumberViewHolder(view)   // Оборачивание Элемента из списка для переиспользования его в дальнейшем
-        viewHolder.viewHolderIndex.text =
-            "ViewHolder index: $viewHolderCount"  // Вводим новый текст значения TextView 2
+        viewHolder.viewHolderIndex.text ="ViewHolder index: $viewHolderCount"  // Вводим новый текст значения TextView 2
         viewHolderCount++
         return viewHolder
     } // Создаем новые ViewHolder-ы
