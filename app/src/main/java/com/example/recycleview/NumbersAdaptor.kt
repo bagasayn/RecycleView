@@ -13,8 +13,8 @@ class NumbersAdaptor(numberOfItems: Int, private var viewHolderCount: Int = 0) :
 
 
     class NumberViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val viewHolderIndex: TextView = itemView.findViewById(R.id.tv_view_holder_number)   // TextView 2 список индексов
         private var listItemNumberView: TextView = itemView.findViewById(R.id.tv_number_item)       // TextView 1 список чисел
-        var viewHolderIndex: TextView = itemView.findViewById(R.id.tv_view_holder_number)   // TextView 2 список индексов
 
         fun bind(listIndex: Int){
             listItemNumberView.text = listIndex.toString()
